@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Proposal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    .buttons {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2.2rem;
+      position: relative;
+      height: 80px;
+    }
+    #no-btn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="proposal-box">
+    <h1>Will You Be Mine?</h1>
+    <p style="font-size: 35px;">
+      From random texts to endless talks, 
+      from late-night calls to daydreams about our future—  
+      every moment with you has been a precious part of my life.<br><br>
+      Will you be the love of my life<br>
+      not just today, but always?
+    </p>
+    <div class="buttons">
+      <button id="yes-btn" onclick="alert('I hope you say YES! 💖')">Yes</button>
+      <button id="no-btn">No</button>
+    </div>
+  </div>
+  <script src="hearts.js"></script>
+  <script>
+    const noBtn = document.getElementById('no-btn');
+    function moveBtn() {
+      const parent = noBtn.parentElement;
+      const parentRect = parent.getBoundingClientRect();
+      const maxLeft = parentRect.width - noBtn.offsetWidth;
+      const maxTop = parentRect.height - noBtn.offsetHeight;
+
+      const newLeft = Math.random() * maxLeft;
+      const newTop = Math.random() * maxTop;
+
+      noBtn.style.left = `${newLeft}px`;
+      noBtn.style.top = `${newTop}px`;
+    }
+    noBtn.addEventListener('mouseover', moveBtn);
+    noBtn.addEventListener('click', moveBtn);
+    // Make sure no-btn starts at a random position
+    window.onload = moveBtn;
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6eb 0%, #ffd6ef 100%);
+  color: #c2185b;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.lock-box, .content-box, .proposal-box {
+  background: rgba(255,255,255,0.9);
+  padding: 2rem 2.5rem;
+  margin: 100px auto 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 8px 36px #c2185b22;
+  max-width: 420px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: normal;
+}
+
+input[type="password"] {
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #ec407a;
+  border-radius: 10px;
+  width: 80%;
+  margin-bottom: 1.4rem;
+}
+
+button {
+  background: #f06292;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #c2185b;
+}
+
+.heart {
+  position: absolute;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  animation: floatHearts 8s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.timeline {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.event {
+  background: #fff0fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px #f0629255;
+  padding: 1.2rem;
+  text-align: center;
+  min-width: 120px;
+  max-width: 180px;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.event img.sticker {
+  width: 72px;
+  height: 72px;
+  display: block;
+  margin: 0 auto 0.6rem auto;
+}
+
+.carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin: 1rem 0;
+}
+.carousel-item {
+  min-width: 150px;
+  background: #fde1ec;
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px #e91e6380;
+}
+
+.memories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 2rem 0;
+}
+
+.memories-list img {
+  border-radius: 12px;
+  width: 120px;
+  margin-bottom: 0.3rem;
+}
+
+audio {
+  width: 100%;
+}
+
+.proposal-box {
+  animation: popIn 0.7s;
+}
+@keyframes popIn {
+  0% { transform: scale(0.80); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1.0); opacity: 1; }
+}
